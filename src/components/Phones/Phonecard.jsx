@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const Phonecard = ({ phone }) => {
      const handleClick = ()=>{
        const addeditem = []
@@ -11,9 +13,21 @@ const Phonecard = ({ phone }) => {
         if(!isexists){
             addeditem.push(...items,phone)
             localStorage.setItem("item",JSON.stringify(addeditem))
+            Swal.fire({
+                
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 1500
+              })
 
         }else{
-            alert("ukhy")
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!',
+                footer: '<a href="">Why do I have this issue?</a>'
+              })
         }
        }
 

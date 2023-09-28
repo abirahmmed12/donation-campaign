@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import Phonecard from "../../components/Phones/Phonecard";
+
+import Phonescard from "../../components/Phones/Phonescard";
 
 
 const Donation = () => {
@@ -21,10 +22,10 @@ const Donation = () => {
     },[])
     console.log(item)
     return (
-        <div className="">
-            {nodata ? <p>{nodata}</p> : <div>
+        <div >
+            {nodata ? <p className="h-[80vh] flex justify-center items-center text-4xl ">{nodata}</p> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 m-auto">
                 {
-                   item.map(phone=><Phonecard key ={phone.id} phone={phone}></Phonecard>) 
+                   item.map(phone=><Phonescard key={phone.id}phone={phone}></Phonescard> )
                 }
                 </div>}
            
