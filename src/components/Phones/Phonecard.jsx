@@ -1,7 +1,26 @@
 const Phonecard = ({ phone }) => {
+     const handleClick = ()=>{
+       const addeditem = []
+       const items = JSON.parse(localStorage.getItem("item"))
+       if (!items){
+        addeditem.push(phone)
+        localStorage.setItem("item",JSON.stringify(addeditem))
+       }
+       else{
+        const isexists =items.find((phone)=>phone.id==id)
+        if(!isexists){
+            addeditem.push(...items,phone)
+            localStorage.setItem("item",JSON.stringify(addeditem))
+
+        }else{
+            alert("ukhy")
+        }
+       }
+
+     }
     
 
-    const { Picture, Category, Description, Price, Card_bg, Text_and_button_bg, more_details} = phone 
+    const {id, Picture, Category, Description, Price, Card_bg, Text_and_button_bg, more_details} = phone 
 
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
@@ -17,7 +36,7 @@ const Phonecard = ({ phone }) => {
 
        
         </div>
-        <button className="text-white btn btn-error    h-fullopacity-50  relative lg:bottom-24 lg:right-80 lg:-left-[600px] bottom-36  left-10 md:bottom-16 md:-left-24 ">
+        <button onClick={handleClick} className="text-white btn btn-error    h-fullopacity-50  relative lg:bottom-24 lg:right-80 lg:-left-[600px] bottom-36  left-10 md:bottom-16 md:-left-24 ">
           Donate: {Price}
         </button>
         
