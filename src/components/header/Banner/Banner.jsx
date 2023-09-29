@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Banner = () => {
+const Banner = ({ searchQuery, onSearch,filterQuery,setFilterQuery }) => {
   const containerStyle = {
     position: 'relative',
     height: '500px',
@@ -44,15 +44,14 @@ const Banner = () => {
     cursor: 'pointer',
   };
 
-  // State for storing the search query
-  const [searchQuery, setSearchQuery] = useState('');
-
-  // Function to handle search button click
-  const handleSearchClick = () => {
-    // You can perform a search action here with the 'searchQuery' state
-    console.log('Search Query:', searchQuery);
+  // State for storing the local search query
+  const [localSearchQuery, setLocalSearchQuery] = useState('');
+ 
+  // Function to handle local search button click
+  const handleSearch= () => {
+    setFilterQuery(localSearchQuery)
   };
-
+ 
   return (
     <div style={containerStyle}>
       <div
@@ -66,13 +65,13 @@ const Banner = () => {
             type="text"
             placeholder="Search..."
             style={inputStyle}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={localSearchQuery}
+            onChange={(e) => setLocalSearchQuery(e.target.value)}
           />
           <button
             className="btn btn-error"
             style={buttonStyle}
-            onClick={handleSearchClick}
+            onClick={handleSearch}
           >
             Search
           </button>

@@ -1,24 +1,24 @@
-import { Link } from 'react-router-dom'; // Import the Link component from React Router
+import { Link } from 'react-router-dom'; 
 
 const Phonescard = ({ phone }) => {
   const { id, Picture, Category, Category_bg, Description, Price, Card_bg, Text_and_button_bg } = phone;
 
   const cardStyle = {
-    backgroundColor: Category_bg, // Apply Category_bg to the entire card
-  };
+    backgroundColor: Category_bg, 
+};
 
   const categoryStyle = {
-    color: Card_bg, // Apply Category_text_color to the category text
-    backgroundColor: Text_and_button_bg, // Add background color to the category text
+    color: Card_bg,
+    backgroundColor: Text_and_button_bg,
   };
 
   const descriptionStyle = {
-    color: Text_and_button_bg, // Apply Description_text_color to the description text
+    color: Text_and_button_bg,
   };
 
   return (
     <div>
-      {/* Use the Link component to create a link */}
+      
       <Link to={`/phones/${id}`}>
         <div className="card" style={cardStyle}>
           <figure><img src={Picture} alt="Product" /></figure>

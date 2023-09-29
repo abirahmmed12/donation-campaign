@@ -3,21 +3,20 @@
 const Selectedcard = ({phone}) => {
     const {id, Picture, Category, Description, Price, Card_bg, Text_and_button_bg, more_details} = phone 
     const cardStyle = {
-        backgroundColor: Category_bg, // Apply Category_bg to the entire card
+        backgroundColor: Category_bg, 
       };
     
       const categoryStyle = {
-        color: Card_bg, // Apply Category_text_color to the category text
-        backgroundColor: Text_and_button_bg, // Add background color to the category text
+        color: Card_bg, 
+        backgroundColor: Text_and_button_bg,
       };
     
       const descriptionStyle = {
-        color: Text_and_button_bg, // Apply Description_text_color to the description text
-      };
+        color: Text_and_button_bg, };
     
       return (
         <div>
-          {/* Use the Link component to create a link */}
+          
        
             <div className="card" style={cardStyle}>
               <figure><img src={Picture} alt="Product" /></figure>

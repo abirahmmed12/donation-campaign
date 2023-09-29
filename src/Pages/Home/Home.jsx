@@ -1,19 +1,28 @@
 import { useLoaderData } from "react-router-dom";
 import Phones from "../../components/Phones/Phones";
 import Banner from "../../components/header/Banner/Banner";
+import { useState } from "react";
 
 
 const Home = () => {
-    const phones = useLoaderData()
-    console.log(phones)
+
+
+    let filteredPhones;
+    filteredPhones = useLoaderData()
+
+    const [filterQuery, setFilterQuery] = useState("")
+    if (filterQuery) {
+        filteredPhones = filteredPhones?.filter((item) => item.Category === filterQuery);
+
+    }
     return (
         <div>
-           
-            <Banner></Banner>
+
+            <Banner filterQuery={filterQuery} setFilterQuery={setFilterQuery}></Banner>
             <div className="mt-10">
-            <Phones phones={phones}></Phones>
+                <Phones phones={filteredPhones}></Phones>
             </div>
-           
+
         </div>
     );
 };

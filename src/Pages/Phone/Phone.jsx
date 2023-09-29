@@ -4,9 +4,10 @@ import Phonecard from "../../components/Phones/Phonecard";
 
 const Phone = () => {
 const phones = useLoaderData()
+
 const {id} = useParams()
 const phone = phones.find(phone => phone.id == id)
- console.log(phone)
+
 
 
   return (
