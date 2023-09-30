@@ -23,8 +23,8 @@ const Phonescard = ({ phone }) => {
         <div className="card" style={cardStyle}>
           <figure><img src={Picture} alt="Product" /></figure>
           <div className="card-body">
-            <h2 className="card-title rounded-lg w-28 p-3" style={categoryStyle}>{Category}</h2>
-            <p className="text-xl font-bold" style={descriptionStyle}>{Description}</p>
+            <h2 className="card-title rounded-lg w-28 p-2" style={categoryStyle}>{Category}</h2>
+            <p className=" font-bold " style={descriptionStyle}>{Description}</p>
           </div>
         </div>
       </Link>

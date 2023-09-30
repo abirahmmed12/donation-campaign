@@ -1,36 +1,46 @@
 import React from 'react';
 
-const ShowingDonation = ({phone}) => {
-    const { id, Picture, Category, Category_bg, Description, Price, Card_bg, Text_and_button_bg } = phone;
+const ShowingDonation = ({ phone }) => {
+  
+  const { id, Picture, Category, Category_bg, Description, Price, Card_bg, Text_and_button_bg } = phone;
 
-    const cardStyle = {
-      backgroundColor: Category_bg, 
+ 
+  const cardStyle = {
+    backgroundColor: Category_bg,
   };
   
-    const categoryStyle = {
-      color: Card_bg,
-      backgroundColor: Text_and_button_bg,
-    };
-  
-    const descriptionStyle = {
-      color: Text_and_button_bg,
-    };   
-    return (
-        <div>
-            
-      
-      
-        <div className="card" style={cardStyle}>
-          <figure><img src={Picture} alt="Product" /></figure>
-          <div className="card-body">
-            <h2 className="card-title rounded-lg w-28 p-3" style={categoryStyle}>{Category}</h2>
-            <p className="text-xl font-bold" style={descriptionStyle}>{Description}</p>
-          </div>
+  const categoryStyle = {
+    color: Card_bg,
+    backgroundColor: Text_and_button_bg,
+  };
+
+ 
+
+  const descriptionStyle = {
+    color: Text_and_button_bg,
+  };
+
+  return (
+    <div className='flex lg:font-bold lg:text-2xl md:text-sm'>
+      <div>
+        <figure className='rounded-none'>
+          <img className='lg:h-56 md:h-40 h-40 ' src={Picture} alt="Product" />
+        </figure>
+      </div>
+      <div className="card w-60 rounded-none p-2" style={cardStyle}>
+        <div className="">
+          <h2 className="" style={descriptionStyle }>
+            {Category}
+          </h2>
+          <h1 className=' text-white lg:text-2xl md:text-xs'>{Description}</h1>
+          <h1 className='lg:text-2xl md:text-xs'>Price: {Price}</h1>
+          <button className="lg:text-2xl md:text-xs btn  " style={categoryStyle }>
+            View Details
+          </button>
         </div>
-     
-            
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default ShowingDonation;

@@ -8,7 +8,7 @@ const Banner = ({ searchQuery, onSearch,filterQuery,setFilterQuery }) => {
 
   const backgroundImageStyle = {
     backgroundImage: 'url("https://img.freepik.com/premium-photo/group-diverse-people-as-donation-community-service-volunteer_53876-38815.jpg?w=740")',
-    filter: 'brightness(20%)', // Adjust the brightness value as needed for the background
+    filter: 'brightness(20%)', 
     height: '100%',
   };
 
@@ -44,10 +44,10 @@ const Banner = ({ searchQuery, onSearch,filterQuery,setFilterQuery }) => {
     cursor: 'pointer',
   };
 
-  // State for storing the local search query
+ 
   const [localSearchQuery, setLocalSearchQuery] = useState('');
  
-  // Function to handle local search button click
+  
   const handleSearch= () => {
     setFilterQuery(localSearchQuery)
   };
@@ -69,7 +69,7 @@ const Banner = ({ searchQuery, onSearch,filterQuery,setFilterQuery }) => {
             onChange={(e) => setLocalSearchQuery(e.target.value)}
           />
           <button
-            className="btn btn-error"
+            className="btn btn-primary"
             style={buttonStyle}
             onClick={handleSearch}
           >

@@ -9,13 +9,13 @@ const Statistics = () => {
   const [myDonation, setMyDonation] = useState(0);
 
   useEffect(() => {
-    // Fetch the data from the JSON file
+   
     fetch('./data.json')
       .then((res) => res.json())
       .then((jsonData) => {
         setData(jsonData);
         setTotalDonations(jsonData.length);
-        // Set the data from the JSON file
+       
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
@@ -36,7 +36,9 @@ const Statistics = () => {
 
   return (
     <div>
-      <h2>Your Donations Percentage: {percentageDonations}%</h2>
+     <div className='flex justify-center'>
+     <h2 className='text-2xl'>Your Donations Percentage: {percentageDonations}%</h2>
+     </div>
       <ResponsiveContainer width="100%" height={500}>
         <PieChart>
           <Pie
@@ -60,6 +62,16 @@ const Statistics = () => {
           <Tooltip />
         </PieChart>
       </ResponsiveContainer>
+      <div className='lg:flex gap-4 justify-center '>
+        <div className='flex gap-3'>
+         <h1>Total Donation</h1> 
+         <p className='border bg-emerald-400 h-4 w-52'></p>
+        </div>
+        <div className='flex gap-3 '>
+        <h1>Your Donation</h1>
+        <p className='border bg-blue-500 h-4 w-52'></p>
+        </div>
+      </div>
     </div>
   );
 };
